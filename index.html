@@ -21,22 +21,44 @@
 </head>
 <body>
     <nav class="navigation">
-        <div class="create-conts">
-            <button class="card" type="button"><i class="fa-solid fa-plus"></i>Create Calculator</button>
+        <div class="create-cal">
+            <button class="create-cal__card" type="button"><i class="fa-solid fa-plus"></i>Create Calculator</button>
         </div>
 
-        <div class="conts">
-            <button class="conts__card" type="button"></i>teste 1 <i class="fa-solid fa-ellipsis-vertical"></i></button>
-            <button class="conts__card" type="button"></i>teste 2 <i class="fa-solid fa-ellipsis-vertical"></i></button>
-            <button class="conts__card" type="button"></i>teste 3 <i class="fa-solid fa-ellipsis-vertical"></i></button>
-           
+        <div class="cal">
+            <div class="cal__group">
+                <button class="cal__card" type="button">teste 1</button>
+                <button class="cal__card__remove" type="remove" ><i class="fa-solid fa-trash"></i></button>
+                <button class="cal__card__dowload" type="dowload" ><i class="fa-solid fa-file-arrow-down"></i></button>
+            </div>
+
+            <div class="cal__group">
+                <button class="cal__card" type="button">teste 2</button>
+                <button class="cal__card__remove" type="remove" ><i class="fa-solid fa-trash"></i></button>
+                <button class="cal__card__dowload" type="dowload" ><i class="fa-solid fa-file-arrow-down"></i></button>
+            </div>
         </div>
 
         <div class="config">
-            <button class="card" type="button"><i class="fa-solid fa-plus"></i>Clear All</button>
-            <button class="card" type="button"><i class="fa-solid fa-plus"></i>Dark Mode</button>
-            <button class="card" type="button"><i class="fa-solid fa-plus"></i>Privacy</button>
-            <button class="card" type="button"><i class="fa-solid fa-plus"></i>Help me</button>
+            <div class="config__group">
+                <button class="config__card" type="button">Clear All</button>
+                <button class="config__card" type="menu" ><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
+
+            <div class="config__group">
+                <button class="config__card" type="button">Dark Mode</button>
+                <button class="config__card" type="menu" ><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
+
+            <div class="config__group">
+                <button class="config__card" type="button">Privacy</button>
+                <button class="config__card" type="menu" ><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
+
+            <div class="config__group">
+                <button class="config__card" type="button">Help me</button>
+                <button class="config__card" type="menu" ><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            </div>
         </div>
     </nav>
 

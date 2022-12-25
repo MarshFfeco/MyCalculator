@@ -28,10 +28,14 @@ body {
 }
 
 button {
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
   color: white;
 }
 
-.display-flex, .navigation .config, .navigation .conts, .flex-center, .card, .navigation .conts__card {
+.display-flex, .navigation .config, .navigation .cal, .navigation .create-cal, .flex-center, .navigation .cal__group, .card, .navigation .config__card__menu, .navigation .config__card, .navigation .config__group, .navigation .cal__card__remove, .navigation .cal__card__dowload, .navigation .cal__card, .navigation .create-cal__card {
   display: flex;
 }
 
@@ -39,34 +43,37 @@ button {
   display: grid;
 }
 
-.flex-center, .card, .navigation .conts__card {
+.flex-center, .navigation .cal__group, .card, .navigation .config__card__menu, .navigation .config__card, .navigation .config__group, .navigation .cal__card__remove, .navigation .cal__card__dowload, .navigation .cal__card, .navigation .create-cal__card {
   justify-content: center;
   align-items: center;
 }
 
-.transition, .card, .navigation .conts__card {
+.transition, .card, .navigation .config__card__menu, .navigation .config__card, .navigation .config__group, .navigation .cal__card__remove, .navigation .cal__card__dowload, .navigation .cal__card, .navigation .create-cal__card {
   transition: all 300ms;
+}
+
+.box-shadow, .navigation .cal__group {
+  box-shadow: 0px 1px 1px -1px #9530D9;
+}
+
+.hover, .navigation .cal__card__remove, .navigation .cal__card__dowload, .navigation .cal__card, .navigation .create-cal__card {
+  opacity: 0.5;
+}
+.hover:hover, .navigation .cal__card__remove:hover, .navigation .cal__card__dowload:hover, .navigation .cal__card:hover, .navigation .create-cal__card:hover {
+  opacity: 1;
 }
 
 i {
   color: white;
 }
 
-.card, .navigation .conts__card {
-  width: 100%;
+.card, .navigation .config__card__menu, .navigation .config__card, .navigation .config__group, .navigation .cal__card__remove, .navigation .cal__card__dowload, .navigation .cal__card, .navigation .create-cal__card {
+  width: 80%;
   height: 44px;
   padding: 0 15px;
   justify-content: flex-start;
   column-gap: 10px;
-  appearance: none;
-  border: none;
-  border-radius: 7px;
-  cursor: pointer;
-  background-color: #9530D9;
-  opacity: 0.5;
-}
-.card:hover, .navigation .conts__card:hover {
-  opacity: 1;
+  background-color: transparent;
 }
 
 .navigation {
@@ -76,25 +83,67 @@ i {
   background-color: #171520;
   padding: 10px;
 }
-.navigation .conts {
+.navigation .create-cal {
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation .create-cal__card {
+  border-radius: 7px;
+  background-color: #9530D9;
+}
+.navigation .create-cal button {
+  width: 100%;
+}
+.navigation .cal {
   flex-direction: column;
   row-gap: 10px;
   padding: 10px 0;
   border-bottom: 1px solid #9530D9;
   overflow-y: auto;
 }
-.navigation .conts i {
-  opacity: 0;
-}
-.navigation .conts__card {
+.navigation .cal__group {
   justify-content: space-between;
+  width: 80%;
+  transition: width 300ms;
 }
-.navigation .conts__card:hover i {
-  opacity: 1;
+.navigation .cal__group:hover {
+  width: 100%;
+}
+.navigation .cal__card {
+  width: 80%;
+}
+.navigation .cal__card__remove i {
+  color: #cc0f01;
+}
+.navigation .cal__card__dowload i {
+  color: #9530D9;
+}
+.navigation .cal__card__remove, .navigation .cal__card__dowload {
+  width: 10%;
 }
 .navigation .config {
   flex-direction: column;
   row-gap: 10px;
+}
+.navigation .config__group {
+  justify-content: space-between;
+  width: 80%;
+  transition: width 300ms;
+}
+.navigation .config__group:hover {
+  width: 100%;
+}
+.navigation .config__card {
+  width: auto;
+  padding: 0;
+}
+.navigation .config__card__menu {
+  background-color: red;
+  width: auto;
+  padding: 0 10px;
+}
+.navigation .config__card__menu:hover {
+  opacity: 1;
 }
 
 main {
