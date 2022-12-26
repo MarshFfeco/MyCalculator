@@ -1,0 +1,172 @@
+///////////////////////
+/// VARIABLES, any
+///////////////////////
+$row-gap-distance: 10px;
+
+$darkMode-color: white;
+$privacy-color: #84563c;
+$help-color: #ffcc00;
+
+///////////////////////
+/// CLASS ALL, all
+///////////////////////
+/// 
+@mixin shadowD($color) {
+    box-shadow: 0px 1px 1px -.5px $color;
+}
+
+.group {
+    height: 44px;
+
+    padding-left: 15px;
+
+    @extend .flex-center;
+
+    justify-content: space-between;
+
+    width: 100%; 
+
+    @extend .transition;
+}
+
+.widthHeightCard {
+    width: 20%;
+    height: 100%;
+}   
+
+
+.navigation {
+    @extend .display-grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 4fr 1fr;
+    row-gap: $row-gap-distance;
+
+    background-color: $backgroud-color-strong;
+
+    padding: $row-gap-distance;
+
+    .create-cal {
+        &__card {
+            @extend .group;
+            column-gap: 10px;
+            justify-content: center;    
+
+            border-radius: 7px;
+
+            box-shadow: 0px 0px 1px 1px $principal-1;
+
+            color: $principal-1;
+
+            i {
+                color: $principal-1;
+            }
+
+            @extend .hover;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+
+    .cal {
+        @extend .display-flex;
+        flex-direction: column;
+        row-gap: $row-gap-distance;
+
+        padding: $row-gap-distance 0;
+
+        border-bottom: 1px solid $principal-1;
+
+        overflow-y: auto;
+
+        &__group {
+            @extend .group;
+
+            border-bottom: 1px solid white;
+
+            @extend .hover;
+        }
+
+        &__card {
+            text-align: left;
+            width: 70%;
+
+            @extend .hover;
+
+            &__remove {
+                i {
+                    color: $color-blood;
+                }
+            }
+
+            &__dowload {
+                i {
+                    color: $principal-1;
+                }
+            }
+
+            &__remove, &__dowload  {
+                @extend .widthHeightCard;
+
+                justify-content: center;
+
+                @extend .hover;
+            }
+        }
+    }
+
+    .config {
+        @extend .display-flex;
+        flex-direction: column;
+        row-gap: $row-gap-distance;
+
+        &__group {
+            @extend .group;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            @extend .hover;
+
+            &:nth-child(1) {
+                @include shadowD($color-blood);
+            }
+
+            &:nth-child(2) {
+                @include shadowD($darkMode-color); 
+            }
+
+            &:nth-child(3) {
+                @include shadowD($privacy-color); 
+            }
+
+            &:nth-child(4) {
+                @include shadowD($help-color); 
+            }
+
+            .clear, .dark-mode, .privacy, .help {
+                @extend .flex-center;
+
+                @extend .widthHeightCard;
+            }
+        }
+
+        &__card {
+            width: 80%;
+
+            text-align: left;
+
+            padding: 0;
+        }
+
+        &__clear, .clear i { color: $color-blood;  }
+
+        &__dark-mode, .dark-mode i { color: $darkMode-color; }
+
+        &__privacy, .privacy i { color: $privacy-color; }
+
+        &__help, .help i { color: $help-color; }
+    }
+}
