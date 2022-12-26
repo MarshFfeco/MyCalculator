@@ -87,12 +87,8 @@ button {
     transition: all $all-transition;
 }
 
-.hover {
-    opacity: .5;
-
-    &:hover {
-        opacity: 1;
-    }
+a {
+    text-decoration: none;
 }
 
 
@@ -104,10 +100,4 @@ i {
 }
 
 
-@import './other/nav';
-
-
-
-main {
-    background-color: blue;
-}
+@import './other/_nav', './other/_content';
